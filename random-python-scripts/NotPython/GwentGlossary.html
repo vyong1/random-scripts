@@ -1,0 +1,103 @@
+<!-- Author: vyong -->
+<html>
+    <head>
+            <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+            <script type="text/javascript">
+                Glossary = {
+                    "ally" : "A Unit on your side of the Board",
+                    "ambush" : "Play face down and only reveal when certain conditions are met",
+                    "armor" : "Absorbs a given amount of Damage dealt to a Unit",
+                    "banish" : "Remove the card from the game",
+                    "bond" : "Trigger this ability each time another copy of this Unit is played on the same side",
+                    "boon" : "Positive row effects, can be removed by some cards and replaced by other Boons and Hazards",
+                    "boost" : "Increase a Unit’s current Power",
+                    "brave" : "Trigger this ability if your opponent is winning the current round",
+                    "charm" : "Move an enemy to your side",
+                    "clash" : "Trigger this ability only if neither player has passed",
+                    "conceal" : "Turn a revealed card over",
+                    "consume" : "Destroy a unit by eating it",
+                    "counter" : "Reduce the counter whenever the given condition is met. When it reaches 0, trigger the Activation ability. Reset the Counter when the Unit leaves the Board",
+                    "create" : "Select a card form a choice of three faction or neutral cards and Spawn it",
+                    "crewmen x" : "When a Unit with a Fresh Crewmen ability is played adjacent to this Unit, trigger that ability X times",
+                    "damage" : "Decreese a Unit’s current power",
+                    "damaged" : "A Damaged Unit’s current Power is less than its base Power",
+                    "deathwish" : "Trigger thgis ability when the card is moved to the Graveyard",
+                    "demote" : "Convert the card to silver (or Bronze, if Bronze was the card’s original color)",
+                    "deploy" : "Trigger this ability when the card is played on the field",
+                    "destroy" : "Move the card to the Graveyard",
+                    "discard" : "Move the card to the Graveyard from the Hand or Deck",
+                    "doomed" : "Units: Banish when Destroyed (not when Discarded); Special Cards: Banish after triggering the card’s ability",
+                    "draw" : "Move the top card of cards from your Deck to your Hand",
+                    "drain" : "Steal Power from a unit",
+                    "duel" : "Units deal their Power’s damage to one another until one of them is destroyed",
+                    "effort" : "Perform the specified action for every card targeted by the preceding ability",
+                    "enemy" : "A Unit on your opponent’s side of the field",
+                    "fresh crew" : "Trigger this ability when this Unit is played adjacent to a Unit with a Crewmen ability",
+                    "gamble" : "Play a game of chance",
+                    "hazard" : "Negative row effect. Can be removed by some cards and replaced by other Hazards and Boons",
+                    "heal" : "Restore a Damaged Unit to its base Power",
+                    "highest" : "Highest Power. Ties are resolved randomly",
+                    "immune" : "Doesn’t allow both players to target the card that has this ability",
+                    "lock" : "Disable a card’s abilities. Disables and reveals Ambushes",
+                    "lowest" : "Lowest Power. Ties are resolved randomly",
+                    "mulligan" : "Exchange a certain number of cards in your Hand for cards from your Deck including Golds (unless stated otherwise)",
+                    "orders" : "Triggers this ability when your Leader card is played (but before the Leader’s ability is resolved)",
+                    "promote" : "Convert the card to Gold until the round ends",
+                    "regressing" : "When this Unit is removed from the board, its base Power is returned to the value it has in the collection. Not disabled by Lock.",
+                    "reload x" : "When a Unit with a Reloaded ability is played adjacent to this Unit, trigger that ability X times",
+                    "reloaded" : "Trigger this ability when the Unit is played adjacent to Units with the Reload Ability",
+                    "retaliation" : "Trigger this ability whenever this Unit is Damaged, but not Destroyed.",
+                    "reset" : "Reset the Unit to its base Power",
+                    "resilient" : "A Resilient Unit remains on the Board at the end of the Round (for 1 round only)",
+                    "resistant" : "A Resistant Unit is immune to the specified Weather effect",
+                    "resurrect" : "Play a card from the Graveyard",
+                    "reveal" : "Turn a card or cards in the Hand over, exposing them to both players",
+                    "revealed" : "A Revealed card has been turned over, exposing it to both players",
+                    "revenge" : "for Deathwishes that only trigger during your opponent’s turn.",
+                    "round end" : "Trigger this ability when the Round ends",
+                    "shield" : "Protects a Unit from the next Power-reducing effect (Damage, Weakening or Set to Lower Power)",
+                    "spawn" : "Add the card to the game and play it",
+                    "spring" : "Reveal a face down Ambush card and trigger its ability",
+                    "spying" : "A Unit is Spying when it is on the opposite side of the Board from the player who played it",
+                    "strenghthen" : "Increase a Unit’s base Power",
+                    "stubborn" : "this card cannot return to the Hand",
+                    "summon" : "Play the specified cards from your Deck",
+                    "swap" : "Move a card from the hand to the deck and draw another in its place",
+                    "timer" : "Reduce the Timer by 1 every turn while this Unit is on the Board. Trigger the ability when it reaches 0 (at Turn Start or Turn End). Reset the Tmer when the Unit leaves the Board",
+                    "transform" : "Convert into a different card",
+                    "trio" : "Trigger this ability when 3 Unlocked copies of this Unit are present on the same row",
+                    "truce" : "If neither player has passed",
+                    "turn start" : "This card’s ability triggers at the start of its current owner’s turn",
+                    "teteran" : "Trigger this ability at the start of Rounds 2 and 3 when this card is in the Hand, Deck or Graveyard",
+                    "teaken" : "Decrease a Unit’s base Power",
+                    "regressing" : "The Card returns to its original Power when placed in the Graveyard",
+                    "loyal" : "When you play a Unit on your side of the Board",
+                    "disloyal" : "When you play a Unit on your opponent’s side"
+                }
+    
+                function searchGlossary(){
+                    var val = document.getElementById('input').value;
+                    val = val.toLowerCase();
+                    if(val in Glossary)
+                    {
+                        document.getElementById('output').innerHTML = Glossary[val];
+                    }
+                }
+            </script>
+    </head>
+    <body style="margin:10px">
+        <div>
+            <label>
+                Enter the glossary term
+            </label>
+        </div>
+        <div>
+            <input id="input" type="text" onkeyup="searchGlossary()">
+        </div>
+        <div class="cell" id="output">
+
+        </div>
+    </body>
+</html>
