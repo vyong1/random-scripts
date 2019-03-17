@@ -28,7 +28,7 @@ map = {
     ' ' : '  '
 }
 
-s = "harold and kumar go to white castle"
+s = input("Enter text here: ")
 s_new = ""
 for c in s:
     if c in map:
