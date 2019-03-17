@@ -1,14 +1,15 @@
 import dataset
 
-arr = dataset.random
-
 def selectionsort(arr):
+    iterations = 0
     # For each number...
     for i in range(0, len(arr)):
+        iterations += 1
         minInd = i
         min = arr[i]
         # Find the minimum...
         for j in range(i, len(arr)):
+            iterations += 1
             if arr[j] < min:
                 min = arr[j]
                 minInd = j
@@ -16,6 +17,8 @@ def selectionsort(arr):
         temp = arr[i]
         arr[i] = arr[minInd]
         arr[minInd] = temp
+    return iterations
 
-selectionsort(arr)
-print(arr)
+arr = dataset.random
+iterations = selectionsort(arr)
+print(iterations, arr)
